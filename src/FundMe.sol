@@ -37,9 +37,9 @@ contract FundMe {
         _;
     }
 
-/*////////////////////////////////////////////////////////
+    /*////////////////////////////////////////////////////////
             this function not withdraw the fund! 
-////////////////////////////////////////////////////////// 
+    ////////////////////////////////////////////////////////// 
 
     function withdraw() public onlyOwner {
         for (
@@ -51,11 +51,11 @@ contract FundMe {
         }
         s_funders = new address[](0);
     }
-*/
+    */
 
-/*////////////////////////////////////////////////////////
+    /*////////////////////////////////////////////////////////
                 Withdraw Function Adjustment
-////////////////////////////////////////////////////////*/
+    ////////////////////////////////////////////////////////*/
 
     function withdraw() public onlyOwner {
         for (uint256 funderIndex = 0; funderIndex < s_funders.length; funderIndex++) {
@@ -64,7 +64,7 @@ contract FundMe {
             s_addressToAmountFunded[funder] = 0;
             payable(i_owner).transfer(amount);
         }
-        s_funders = new address[](0) ;
+        s_funders = new address[](0);
     }
 
     function cheaperWithdraw() public onlyOwner {
@@ -75,18 +75,18 @@ contract FundMe {
             s_addressToAmountFunded[funder] = 0;
             payable(i_owner).transfer(amount);
         }
-        s_funders = new address[](0) ;
+        s_funders = new address[](0);
     }
 
-    function getAddressToAmontFunded(address fundingAddress) external view returns(uint256){
+    function getAddressToAmontFunded(address fundingAddress) external view returns (uint256) {
         return s_addressToAmountFunded[fundingAddress];
     }
 
-    function getFunder (uint index) external view returns (address){
+    function getFunder(uint256 index) external view returns (address) {
         return s_funders[index];
     }
 
-    function getOwner () external view returns(address) {
+    function getOwner() external view returns (address) {
         return i_owner;
     }
 }

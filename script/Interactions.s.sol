@@ -18,19 +18,18 @@ contract FundFundMe is Script {
         vm.stopBroadcast();
         console.log("Funded FundME with =   %s", SEND_VALUE);
         console.log("mostRecentlyDeployed= ", address(mostRecentlyDeployed).balance);
-
     }
 
     function run() external {
         address mostRecentlyDeployed = DevOpsTools.get_most_recent_deployment("FundMe", block.chainid);
-        
+
         // Check the balance of the deployed contract
         console.log("Initial balance of FundMe:", address(mostRecentlyDeployed).balance);
-        
+
         vm.startBroadcast(); // to begin broadcasting your transactions
         fundFundMeVar(mostRecentlyDeployed);
         vm.stopBroadcast();
-        
+
         // Log the balance after funding
         console.log("Balance after funding:", address(mostRecentlyDeployed).balance);
     }

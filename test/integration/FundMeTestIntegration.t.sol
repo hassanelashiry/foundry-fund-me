@@ -22,7 +22,7 @@ contract fundMeTestInteractions is Test {
         FundFundMe FundFundMeVar = new FundFundMe();
         FundFundMeVar.fundFundMeVar(address(FundMeVar));
         console.log("FundMeVar balance= ", address(FundMeVar).balance);
-       
+
         WithdrawFundMe WithdrawFundMeVar = new WithdrawFundMe();
         WithdrawFundMeVar.withdrawFundMeVar(address(FundMeVar));
         assert(address(FundMeVar).balance == 0);
