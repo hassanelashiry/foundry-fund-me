@@ -111,10 +111,3 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ```
-
-### Notes:
-- Replace `<repository-url>` with the actual URL of your GitHub repository.
-- Adjust any descriptions or sections according to your project needs.
-- Make sure to include a `LICENSE` file if you reference it in the README. 
-
-This README should provide a clear overview of your project, making it easier for other developers or users to understand and interact with your code. Let me know if you need any more adjustments!
